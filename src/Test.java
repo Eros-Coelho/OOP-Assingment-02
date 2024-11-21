@@ -8,8 +8,8 @@ public class Test {
     public static void main(String[] args) {
 
 //        creating lecturer objects so i can create subject objects
-        Lecturer lecturer1 = new Lecturer("Erwin", "Smith", "Mathematics");
-        Lecturer lecturer2 = new Lecturer("Zoe", "Hange", "Computing Science");
+        Lecturer lecturer1 = new Lecturer("Irwin", "Smith", "Mathematics");
+        Lecturer lecturer2 = new Lecturer("Zoe", "O'Connor", "Computing Science");
         Lecturer lecturer3 = new Lecturer("Jaime", "O'Sullivan", "English");
 
 //        creating 3 subject objects; 2 with honour student credits, 1 with ordinary student credits
@@ -19,11 +19,11 @@ public class Test {
 
 //        creating student objects for honour and ordinary students
 //        created 5 of each, using the concrete classes HonourStudent and OrdinaryStudent, since we cannot instantiate abstract classes such as Student
-        HonourStudent student1 = new HonourStudent("Michael", "Hunt", 1, 360);
+        HonourStudent student1 = new HonourStudent("Michael", "O'Flannagan", 1, 360);
         HonourStudent student2 = new HonourStudent("Seamus", "McCarthy", 2, 360);
         HonourStudent student3 = new HonourStudent("Niamh", "Fitzhenry", 3, 360);
         HonourStudent student4 = new HonourStudent("Clarissa", "Fitzgerald", 4, 360);
-        HonourStudent student5 = new HonourStudent("Alfred", "Pennyworth", 5, 360);
+        HonourStudent student5 = new HonourStudent("Alfred", "Howard", 5, 360);
 
         OrdinaryStudent student6 = new OrdinaryStudent("Alice", "Wonderland", 6, 300);
         OrdinaryStudent student7 = new OrdinaryStudent("Andrew", "Garfield", 7, 300);
