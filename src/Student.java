@@ -12,8 +12,8 @@ public abstract class Student extends Account{
     public Student (String firstName, String lastName, int student_id) {
         super(firstName, lastName, generateEmail(firstName, lastName));
         this.student_id = student_id;
-        this.credits = credits;
-        this.years = years;
+//        this.credits = credits;
+//        this.years = years;
     }
 
     public int getCredits(){
@@ -39,7 +39,6 @@ public abstract class Student extends Account{
     public void setYears(int years){
         this.years = years;
     }
-
 
     //    I put the generateEmail method on both the Student and Lecturer classes because they are different, ie "@student.griffith.ie" vs "@griffith.ie"
     private static String generateEmail(String firstName, String lastName) {

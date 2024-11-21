@@ -119,9 +119,9 @@ public class Subject implements Roster {
 //        new student object just created, first checks if years = 4, if so, assign them to HonourStudent
         Student newStudent;
         if (years == 4){
-            newStudent = new HonourStudent(firstName, surname, student_id, 4);
+            newStudent = new HonourStudent(firstName, surname, student_id, 360, 4);
         } else {
-            newStudent = new OrdinaryStudent(firstName, surname, student_id, years);
+            newStudent = new OrdinaryStudent(firstName, surname, student_id, 300, 4);
         }
         roster.add(newStudent);
         return true;
