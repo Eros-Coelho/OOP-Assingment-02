@@ -12,8 +12,6 @@ public abstract class Student extends Account{
     public Student (String firstName, String lastName, int student_id) {
         super(firstName, lastName, generateEmail(firstName, lastName));
         this.student_id = student_id;
-//        this.credits = credits;
-//        this.years = years;
     }
 
     public int getCredits(){
@@ -45,5 +43,6 @@ public abstract class Student extends Account{
         return firstName.toLowerCase() + "." + lastName.toLowerCase() + "@student.griffith.ie";
     }
 
+//    abstract method displayInfo, no body, hence abstract, but it is also implemented on HonourStudent and OrdinaryStudent
     public abstract void displayInfo();
 }

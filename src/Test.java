@@ -3,6 +3,8 @@ Name: Eros Lima Coelho
 Student ID: 3151957
  */
 
+import java.util.ArrayList;
+
 public class Test {
 
     public static void main(String[] args) {
@@ -22,7 +24,7 @@ public class Test {
         HonourStudent student1 = new HonourStudent("Michael", "O'Flannagan", 1, 360, 4);
         HonourStudent student2 = new HonourStudent("Seamus", "McCarthy", 2, 360, 4);
         HonourStudent student3 = new HonourStudent("Niamh", "Fitzhenry", 3, 360, 4);
-        HonourStudent student4 = new HonourStudent("Clarissa", "Fitzgerald", 4, 360,4 );
+        HonourStudent student4 = new HonourStudent("Clarissa", "Fitzgerald", 4, 360, 4);
         HonourStudent student5 = new HonourStudent("Alfred", "Howard", 5, 360, 4);
 
         OrdinaryStudent student6 = new OrdinaryStudent("Alice", "Day", 6, 300, 3);
@@ -51,5 +53,40 @@ public class Test {
         subject3.enrol(student9);
         subject3.enrol(student0);
         subject3.enrol("Tobias", "Hunt", 14, 3);
+
+//        implementing methods to print each subject's details
+        subjectDetails(subject1);
+        subjectDetails(subject2);
+        subjectDetails(subject3);
+
+        sharedStudentInfo(subject1, subject2, subject3);
     }
+
+//    method to sort students into either BSCH or BSCO, depending on where they are enrolled
+    private static void subjectDetails(Subject subject) {
+        System.out.println("Students enrolled in " + subject.getTitle() + ": ");
+        for (Student student : subject.getRoster()){
+            String studentType = (student instanceof HonourStudent) ? "BSCH" : "BSCO";
+            System.out.println(student.getFirstName() + " " + student.getLastname() + " (" + studentType + ")");
+        }
+        System.out.println();
+    }
+
+//    uses ArrayList to check whether a student is enrolled in more than one subject, if so, checks if they're in the group sharedStudents, if not, they aare added
+    private static void sharedStudentInfo(Subject subject1, Subject subject2, Subject subject3){
+        ArrayList<Student> sharedStudents = new ArrayList<>();
+        for (Student student : subject1.getRoster()){
+            if (subject2.getRoster().contains(student) || subject3.getRoster().contains(student)){
+                if (!sharedStudents.contains(student)){
+                    sharedStudents.add(student);
+                }
+            }
+        }
+//        uses a for each loop to print out all the details of students enrolled in more than one subject
+        System.out.println("Students enrolled in more than one subject: ");
+        for(Student student : sharedStudents){
+            student.displayInfo();
+        }
+    }
+//    Tried to comment as much as possible, but also to be concise so not to drag on needlessly
 }

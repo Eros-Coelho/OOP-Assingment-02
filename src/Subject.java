@@ -126,10 +126,4 @@ public class Subject implements Roster {
         roster.add(newStudent);
         return true;
     }
-
-// Remember: either use or remove this (and also from the interface)
-//    @Override
-//    public boolean enrol() {
-//        return false;
-//    }
 }

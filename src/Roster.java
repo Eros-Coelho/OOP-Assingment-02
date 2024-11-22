@@ -23,6 +23,4 @@ public interface Roster {
 
     public boolean enrol(String firstName, String surname, int student_id, int years);
 
-//    either use or remove
-//    boolean enrol();
 }
